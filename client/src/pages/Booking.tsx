@@ -116,12 +116,10 @@ export default function Booking() {
                 </p>
               </div>
               <div className="flex gap-3">
-                <Link href="/">
-                  <a className="flex-1">
-                    <Button variant="outline" className="w-full">
-                      Voltar ao Início
-                    </Button>
-                  </a>
+                <Link href="/" className="flex-1">
+                  <Button variant="outline" className="w-full">
+                    Voltar ao Início
+                  </Button>
                 </Link>
                 <Button
                   className="flex-1"
@@ -155,27 +153,19 @@ export default function Booking() {
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-2">
-              <Sparkles className="h-6 w-6 text-primary" />
-              <span className="text-xl font-semibold">Beauty Studio</span>
-            </a>
+          <Link href="/" className="flex items-center gap-2">
+            <Sparkles className="h-6 w-6 text-primary" />
+            <span className="text-xl font-semibold">Beauty Studio</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Início
-              </a>
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+              Início
             </Link>
-            <Link href="/services">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Serviços
-              </a>
+            <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
+              Serviços
             </Link>
-            <Link href="/professionals">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Profissionais
-              </a>
+            <Link href="/professionals" className="text-sm font-medium hover:text-primary transition-colors">
+              Profissionais
             </Link>
           </nav>
         </div>
@@ -184,11 +174,9 @@ export default function Booking() {
       {/* Page Header */}
       <section className="py-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container">
-          <Link href="/">
-            <a className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar para Início
-            </a>
+          <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Voltar para Início
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Agendar Horário</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">

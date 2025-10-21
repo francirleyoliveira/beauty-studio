@@ -211,32 +211,22 @@ export default function Services() {
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/">
-            <a className="flex items-center gap-2">
-              <Sparkles className="h-6 w-6 text-primary" />
-              <span className="text-xl font-semibold">Beauty Studio</span>
-            </a>
+          <Link href="/" className="flex items-center gap-2">
+            <Sparkles className="h-6 w-6 text-primary" />
+            <span className="text-xl font-semibold">Beauty Studio</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Início
-              </a>
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+              Início
             </Link>
-            <Link href="/services">
-              <a className="text-sm font-medium text-primary">
-                Serviços
-              </a>
+            <Link href="/services" className="text-sm font-medium text-primary">
+              Serviços
             </Link>
-            <Link href="/professionals">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Profissionais
-              </a>
+            <Link href="/professionals" className="text-sm font-medium hover:text-primary transition-colors">
+              Profissionais
             </Link>
             <Link href="/booking">
-              <a>
-                <Button>Agendar Horário</Button>
-              </a>
+              <Button>Agendar Horário</Button>
             </Link>
           </nav>
         </div>
@@ -245,11 +235,9 @@ export default function Services() {
       {/* Page Header */}
       <section className="py-12 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container">
-          <Link href="/">
-            <a className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Voltar para Início
-            </a>
+          <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Voltar para Início
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Nossos Serviços</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
@@ -293,9 +281,7 @@ export default function Services() {
                       <CardFooter className="flex items-center justify-between">
                         <span className="text-2xl font-bold text-primary">{service.price}</span>
                         <Link href="/booking">
-                          <a>
-                            <Button>Agendar</Button>
-                          </a>
+                          <Button>Agendar</Button>
                         </Link>
                       </CardFooter>
                     </Card>
@@ -315,11 +301,9 @@ export default function Services() {
             Escolha o serviço ideal para você e agende seu horário com nossos profissionais
           </p>
           <Link href="/booking">
-            <a>
-              <Button size="lg" variant="secondary">
-                Agendar Agora
-              </Button>
-            </a>
+            <Button size="lg" variant="secondary">
+              Agendar Agora
+            </Button>
           </Link>
         </div>
       </section>

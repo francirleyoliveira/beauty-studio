@@ -14,25 +14,17 @@ export default function Home() {
             <span className="text-xl font-semibold">Beauty Studio</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Início
-              </a>
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+              Início
             </Link>
-            <Link href="/services">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Serviços
-              </a>
+            <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
+              Serviços
             </Link>
-            <Link href="/professionals">
-              <a className="text-sm font-medium hover:text-primary transition-colors">
-                Profissionais
-              </a>
+            <Link href="/professionals" className="text-sm font-medium hover:text-primary transition-colors">
+              Profissionais
             </Link>
             <Link href="/booking">
-              <a>
-                <Button>Agendar Horário</Button>
-              </a>
+              <Button>Agendar Horário</Button>
             </Link>
           </nav>
         </div>
@@ -53,19 +45,15 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/booking">
-                  <a>
-                    <Button size="lg" className="w-full sm:w-auto">
-                      <Calendar className="mr-2 h-5 w-5" />
-                      Agendar Agora
-                    </Button>
-                  </a>
+                  <Button size="lg" className="w-full sm:w-auto">
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Agendar Agora
+                  </Button>
                 </Link>
                 <Link href="/services">
-                  <a>
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                      Ver Serviços
-                    </Button>
-                  </a>
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                    Ver Serviços
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -143,11 +131,9 @@ export default function Home() {
           </div>
           <div className="text-center mt-8">
             <Link href="/services">
-              <a>
-                <Button variant="outline" size="lg">
-                  Ver Todos os Serviços
-                </Button>
-              </a>
+              <Button variant="outline" size="lg">
+                Ver Todos os Serviços
+              </Button>
             </Link>
           </div>
         </div>
@@ -202,9 +188,7 @@ export default function Home() {
                 </div>
               </div>
               <Link href="/professionals">
-                <a>
-                  <Button size="lg">Conheça Nossa Equipe</Button>
-                </a>
+                <Button size="lg">Conheça Nossa Equipe</Button>
               </Link>
             </div>
           </div>
@@ -219,12 +203,10 @@ export default function Home() {
             Agende seu horário agora e descubra por que somos o estúdio de beleza preferido da região
           </p>
           <Link href="/booking">
-            <a>
-              <Button size="lg" variant="secondary">
-                <Calendar className="mr-2 h-5 w-5" />
-                Agendar Meu Horário
-              </Button>
-            </a>
+            <Button size="lg" variant="secondary">
+              <Calendar className="mr-2 h-5 w-5" />
+              Agendar Meu Horário
+            </Button>
           </Link>
         </div>
       </section>
@@ -246,24 +228,18 @@ export default function Home() {
               <h3 className="font-semibold mb-4">Links Rápidos</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/services">
-                    <a className="text-muted-foreground hover:text-primary transition-colors">
-                      Serviços
-                    </a>
+                  <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">
+                    Serviços
                   </Link>
                 </li>
                 <li>
-                  <Link href="/professionals">
-                    <a className="text-muted-foreground hover:text-primary transition-colors">
-                      Profissionais
-                    </a>
+                  <Link href="/professionals" className="text-muted-foreground hover:text-primary transition-colors">
+                    Profissionais
                   </Link>
                 </li>
                 <li>
-                  <Link href="/booking">
-                    <a className="text-muted-foreground hover:text-primary transition-colors">
-                      Agendamento
-                    </a>
+                  <Link href="/booking" className="text-muted-foreground hover:text-primary transition-colors">
+                    Agendamento
                   </Link>
                 </li>
               </ul>

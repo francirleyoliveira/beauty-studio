@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, services, professionals, bookings, InsertBooking } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -85,4 +85,89 @@ export async function getUser(id: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Services queries
+export async function getAllServices() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get services: database not available");
+    return [];
+  }
+
+  return await db.select().from(services);
+}
+
+export async function getServiceById(id: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get service: database not available");
+    return undefined;
+  }
+
+  const result = await db.select().from(services).where(eq(services.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+// Professionals queries
+export async function getAllProfessionals() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get professionals: database not available");
+    return [];
+  }
+
+  return await db.select().from(professionals);
+}
+
+export async function getProfessionalById(id: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get professional: database not available");
+    return undefined;
+  }
+
+  const result = await db.select().from(professionals).where(eq(professionals.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+// Bookings queries
+export async function createBooking(booking: InsertBooking) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot create booking: database not available");
+    throw new Error("Database not available");
+  }
+
+  await db.insert(bookings).values(booking);
+  return booking;
+}
+
+export async function getBookingsByUserId(userId: string) {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get bookings: database not available");
+    return [];
+  }
+
+  return await db.select().from(bookings).where(eq(bookings.userId, userId));
+}
+
+export async function getAllBookings() {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot get bookings: database not available");
+    return [];
+  }
+
+  return await db.select().from(bookings);
+}
+
+export async function updateBookingStatus(id: string, status: "pending" | "confirmed" | "cancelled" | "completed") {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot update booking: database not available");
+    throw new Error("Database not available");
+  }
+
+  await db.update(bookings).set({ status, updatedAt: new Date() }).where(eq(bookings.id, id));
+}
+

@@ -10,6 +10,7 @@ const services = [
     icon: Scissors,
     items: [
       {
+        id: "1",
         name: "Corte Feminino",
         description: "Corte personalizado de acordo com seu estilo e formato de rosto",
         duration: "45 min",
@@ -17,18 +18,21 @@ const services = [
         popular: true,
       },
       {
+        id: "2",
         name: "Corte Masculino",
         description: "Corte moderno com acabamento profissional",
         duration: "30 min",
         price: "R$ 50,00",
       },
       {
+        id: "3",
         name: "Coloração Completa",
         description: "Coloração profissional com produtos de alta qualidade",
         duration: "2h",
         price: "R$ 180,00",
       },
       {
+        id: "4",
         name: "Mechas e Luzes",
         description: "Técnicas modernas de iluminação capilar",
         duration: "3h",
@@ -36,12 +40,14 @@ const services = [
         popular: true,
       },
       {
+        id: "5",
         name: "Hidratação Profunda",
         description: "Tratamento intensivo para recuperação dos fios",
         duration: "1h",
         price: "R$ 90,00",
       },
       {
+        id: "6",
         name: "Escova Modeladora",
         description: "Escova profissional com finalização impecável",
         duration: "45 min",
@@ -54,6 +60,7 @@ const services = [
     icon: Sparkles,
     items: [
       {
+        id: "5",
         name: "Maquiagem Social",
         description: "Maquiagem elegante para eventos e ocasiões especiais",
         duration: "1h",
@@ -61,18 +68,21 @@ const services = [
         popular: true,
       },
       {
+        id: "6",
         name: "Maquiagem para Noivas",
         description: "Maquiagem especial para o dia mais importante",
         duration: "1h 30min",
         price: "R$ 250,00",
       },
       {
+        id: "7",
         name: "Maquiagem Profissional",
         description: "Para ensaios fotográficos e produções",
         duration: "1h 30min",
         price: "R$ 200,00",
       },
       {
+        id: "8",
         name: "Automaquiagem",
         description: "Aprenda técnicas de maquiagem para o dia a dia",
         duration: "2h",
@@ -85,6 +95,7 @@ const services = [
     icon: Heart,
     items: [
       {
+        id: "7",
         name: "Limpeza de Pele",
         description: "Limpeza profunda com extração e hidratação",
         duration: "1h 30min",
@@ -92,18 +103,21 @@ const services = [
         popular: true,
       },
       {
+        id: "10",
         name: "Peeling Químico",
         description: "Renovação celular para pele mais jovem",
         duration: "1h",
         price: "R$ 200,00",
       },
       {
+        id: "11",
         name: "Microagulhamento",
         description: "Tratamento para rejuvenescimento e cicatrizes",
         duration: "1h 30min",
         price: "R$ 280,00",
       },
       {
+        id: "12",
         name: "Drenagem Facial",
         description: "Redução de inchaço e melhora da circulação",
         duration: "45 min",
@@ -116,18 +130,21 @@ const services = [
     icon: Palette,
     items: [
       {
+        id: "13",
         name: "Manicure Completa",
         description: "Cuidados completos para suas unhas",
         duration: "45 min",
         price: "R$ 45,00",
       },
       {
+        id: "14",
         name: "Pedicure Completa",
         description: "Tratamento completo para os pés",
         duration: "1h",
         price: "R$ 55,00",
       },
       {
+        id: "8",
         name: "Unhas em Gel",
         description: "Alongamento e decoração em gel",
         duration: "2h",
@@ -135,6 +152,7 @@ const services = [
         popular: true,
       },
       {
+        id: "16",
         name: "Blindagem de Unhas",
         description: "Fortalecimento e proteção das unhas",
         duration: "45 min",
@@ -147,6 +165,7 @@ const services = [
     icon: Eye,
     items: [
       {
+        id: "9",
         name: "Design de Sobrancelhas",
         description: "Modelagem perfeita para seu rosto",
         duration: "30 min",
@@ -154,18 +173,21 @@ const services = [
         popular: true,
       },
       {
+        id: "18",
         name: "Micropigmentação de Sobrancelhas",
         description: "Sobrancelhas perfeitas por mais tempo",
         duration: "2h",
         price: "R$ 450,00",
       },
       {
+        id: "19",
         name: "Extensão de Cílios",
         description: "Cílios longos e volumosos",
         duration: "2h",
         price: "R$ 180,00",
       },
       {
+        id: "20",
         name: "Laminação de Cílios",
         description: "Curvatura natural e duradoura",
         duration: "1h",
@@ -178,24 +200,28 @@ const services = [
     icon: HandMetal,
     items: [
       {
+        id: "21",
         name: "Depilação Facial",
         description: "Remoção suave de pelos faciais",
         duration: "30 min",
         price: "R$ 35,00",
       },
       {
+        id: "22",
         name: "Depilação de Pernas Completas",
         description: "Depilação com cera de qualidade",
         duration: "45 min",
         price: "R$ 70,00",
       },
       {
+        id: "23",
         name: "Depilação Axilas",
         description: "Depilação rápida e eficiente",
         duration: "15 min",
         price: "R$ 25,00",
       },
       {
+        id: "24",
         name: "Depilação Virilha Completa",
         description: "Depilação completa com conforto",
         duration: "30 min",
@@ -280,7 +306,7 @@ export default function Services() {
                       </CardContent>
                       <CardFooter className="flex items-center justify-between">
                         <span className="text-2xl font-bold text-primary">{service.price}</span>
-                        <Link href="/booking">
+                        <Link href={`/booking?service=${service.id}`}>
                           <Button>Agendar</Button>
                         </Link>
                       </CardFooter>

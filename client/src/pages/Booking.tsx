@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Sparkles, ArrowLeft, Calendar, Clock, User, Mail, Phone, CheckCircle2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -38,6 +38,7 @@ const timeSlots = [
 ];
 
 export default function Booking() {
+  const [location] = useLocation();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     serviceId: "",
@@ -50,6 +51,15 @@ export default function Booking() {
     notes: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Pré-selecionar serviço se vier da URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceId = params.get("service");
+    if (serviceId) {
+      setFormData(prev => ({ ...prev, serviceId }));
+    }
+  }, []);
 
   const createBookingMutation = trpc.bookings.create.useMutation({
     onSuccess: () => {

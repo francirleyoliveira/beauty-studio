@@ -40,26 +40,26 @@ const timeSlots = [
 export default function Booking() {
   const [location] = useLocation();
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
-    serviceId: "",
-    professionalId: "",
-    date: "",
-    time: "",
-    customerName: "",
-    customerEmail: "",
-    customerPhone: "",
-    notes: "",
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Pré-selecionar serviço se vier da URL
-  useEffect(() => {
+  
+  // Inicializar formData com o serviço da URL se existir
+  const [formData, setFormData] = useState(() => {
     const params = new URLSearchParams(window.location.search);
-    const serviceId = params.get("service");
-    if (serviceId) {
-      setFormData(prev => ({ ...prev, serviceId }));
-    }
-  }, []);
+    const serviceId = params.get("service") || "";
+    const serviceExists = serviceId ? services.find(s => s.id === serviceId) : null;
+    
+    return {
+      serviceId: serviceExists ? serviceId : "",
+      professionalId: "",
+      date: "",
+      time: "",
+      customerName: "",
+      customerEmail: "",
+      customerPhone: "",
+      notes: "",
+    };
+  });
+  
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const createBookingMutation = trpc.bookings.create.useMutation({
     onSuccess: () => {
